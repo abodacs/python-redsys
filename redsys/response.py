@@ -138,7 +138,7 @@ class Response:
 
     @property
     def message(self):
-        return RESPONSE_MAP["0000"] if self.is_paid else RESPONSE_MAP[self.response]
+        return RESPONSE_MAP["0000"] if self.is_paid else RESPONSE_MAP[self.response.lstrip("0")]
 
     @staticmethod
     def clean_amount(value):
